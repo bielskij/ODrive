@@ -728,11 +728,11 @@ class Sync extends EventEmitter {
         });
       });
 
-      pageToken = result.nextPageToken;
-      changes = changes.concat(result.changes);
+      pageToken = result.data.nextPageToken;
+      changes = changes.concat(result.data.changes);
 
-      if (result.newStartPageToken) {
-        this.changeToken = result.newStartPageToken;
+      if (result.data.newStartPageToken) {
+        this.changeToken = result.data.newStartPageToken;
       }
     }
 
